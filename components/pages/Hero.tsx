@@ -46,11 +46,6 @@ const HeroSection: React.FC = () => {
                         <button className="btn-orange">Live Chat</button>
                         <button className="btn-phone">(646) 298 6438</button>
                     </div>
-
-                    <div className="hero-trust">
-                        <div className="trust-badge"><span className="trust-star">★</span><span>REVIEWS.io</span></div>
-                        <div className="trust-badge"><span className="trust-bark">&#60;bark</span></div>
-                    </div>
                 </div>
 
                 <div className="hero-right">

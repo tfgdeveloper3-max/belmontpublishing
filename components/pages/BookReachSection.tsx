@@ -23,10 +23,7 @@ const BookReachSection: React.FC = () => {
 
     return (
         <section className="reach-section" ref={sectionRef}>
-            {/* Subtle grid pattern */}
             <div className="reach-grid" />
-
-            {/* Ambient glows */}
             <div className="reach-glow reach-glow-tr" />
             <div className="reach-glow reach-glow-bl" />
 
@@ -34,14 +31,13 @@ const BookReachSection: React.FC = () => {
 
                 {/* ── LEFT: content ── */}
                 <div className={`reach-left${visible ? " slide-in-left" : ""}`}>
-                    {/* Animated badge */}
                     <div className="reach-badge">
                         <span className="badge-dot" />
                         Global Distribution
                     </div>
 
                     <h2 className="reach-heading">
-                        Break Free From Platform Dependency and Expand Your Book’s
+                        Break Free From Platform Dependency and Expand Your Book's
                         <span className="hl"> Global</span> Reach
                     </h2>
 
@@ -56,7 +52,6 @@ const BookReachSection: React.FC = () => {
                         We distribute your e-book across global reading ecosystems to maximize visibility, engagement, and long-term sales potential.
                     </p>
 
-                    {/* Platform chips */}
                     <div className="reach-chips">
                         {["Amazon Kindle", "Apple Books", "Kobo", "IngramSpark", "Barnes & Noble"].map((p) => (
                             <div key={p} className="chip">
@@ -74,15 +69,22 @@ const BookReachSection: React.FC = () => {
 
                 {/* ── RIGHT: image + orbit ── */}
                 <div className={`reach-right${visible ? " fade-in" : ""}`}>
-                    {/* Rotating dashed ring with orbit dots */}
-                    <div className="ring-rotate">
+                    {/* Outer rotating dashed ring */}
+                    <div className="ring-rotate ring-outer">
                         <span className="orbit-dot od-1" />
                         <span className="orbit-dot od-2" />
                         <span className="orbit-dot od-3" />
                     </div>
 
-                    {/* Static glowing ring */}
-                    <div className="ring-solid" />
+                    {/* Second rotating ring — opposite direction */}
+                    <div className="ring-rotate ring-mid">
+                        <span className="orbit-dot od-4" />
+                        <span className="orbit-dot od-5" />
+                    </div>
+
+                    {/* Static glowing rings */}
+                    <div className="ring-solid ring-solid-1" />
+                    <div className="ring-solid ring-solid-2" />
 
                     {/* Animated dots background */}
                     <div className="dots-bg" />
@@ -98,8 +100,8 @@ const BookReachSection: React.FC = () => {
                         <Image
                             src="/images/book-2.png"
                             alt="Beyond Snake Book"
-                            width={500}
-                            height={440}
+                            width={620}
+                            height={560}
                             style={{
                                 width: "100%",
                                 height: "auto",
@@ -117,12 +119,11 @@ const BookReachSection: React.FC = () => {
                 .reach-section {
                     background: #1a1a1a;
                     font-family: "Nunito Sans", sans-serif;
-                    padding: 72px 60px;
+                    padding: 80px 60px;
                     position: relative;
                     overflow: hidden;
                 }
 
-                /* Grid */
                 .reach-grid {
                     position: absolute; inset: 0;
                     background-image:
@@ -133,7 +134,6 @@ const BookReachSection: React.FC = () => {
                     z-index: 0;
                 }
 
-                /* Glows */
                 .reach-glow {
                     position: absolute;
                     border-radius: 50%;
@@ -142,12 +142,12 @@ const BookReachSection: React.FC = () => {
                 }
                 .reach-glow-tr {
                     top: -100px; right: -60px;
-                    width: 440px; height: 440px;
+                    width: 540px; height: 540px;
                     background: radial-gradient(circle, rgba(245, 124, 21, 0.15) 0%, transparent 65%);
                 }
                 .reach-glow-bl {
                     bottom: -80px; left: -60px;
-                    width: 340px; height: 340px;
+                    width: 400px; height: 400px;
                     background: radial-gradient(circle, rgba(245, 124, 21, 0.08) 0%, transparent 65%);
                 }
 
@@ -156,19 +156,19 @@ const BookReachSection: React.FC = () => {
                     position: relative; z-index: 2;
                     display: flex;
                     align-items: center;
-                    gap: 64px;
-                    max-width: 1300px;
+                    gap: 40px;
+                    max-width: 1400px;
                     margin: 0 auto;
                 }
 
                 /* ── RIGHT ── */
                 .reach-right {
-                    flex: 0 0 44%;
+                    flex: 0 0 52%;
                     position: relative;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    min-height: 480px;
+                    min-height: 620px;
                     opacity: 0;
                     transform: translateX(80px);
                     transition: opacity 0.9s ease 0.1s, transform 0.9s ease 0.1s;
@@ -178,50 +178,93 @@ const BookReachSection: React.FC = () => {
                     transform: translateX(0);
                 }
 
-                /* Rotating dashed ring */
+                /* Outer rotating ring */
                 .ring-rotate {
                     position: absolute;
                     top: 50%; left: 50%;
-                    width: 380px; height: 380px;
-                    margin-top: -190px; margin-left: -190px;
                     border-radius: 50%;
                     border: 1.5px dashed rgba(245, 124, 21, 0.22);
+                }
+                .ring-outer {
+                    width: 500px; height: 500px;
+                    margin-top: -250px; margin-left: -250px;
                     animation: spin 18s linear infinite;
                 }
+                .ring-mid {
+                    width: 390px; height: 390px;
+                    margin-top: -195px; margin-left: -195px;
+                    animation: spin-reverse 14s linear infinite;
+                    border-style: dotted;
+                    border-color: rgba(245, 124, 21, 0.15);
+                }
+
                 @keyframes spin {
                     from { transform: rotate(0deg); }
                     to   { transform: rotate(360deg); }
+                }
+                @keyframes spin-reverse {
+                    from { transform: rotate(0deg); }
+                    to   { transform: rotate(-360deg); }
                 }
 
                 /* Orbit dots */
                 .orbit-dot {
                     position: absolute;
-                    width: 8px; height: 8px;
                     border-radius: 50%;
                     background: #f57c15;
-                    box-shadow: 0 0 10px rgba(245, 124, 21, 0.9);
                     top: 50%; left: 50%;
                 }
-                .od-1 { transform: translate(-50%, -50%) rotate(0deg)   translateX(190px); }
-                .od-2 { transform: translate(-50%, -50%) rotate(120deg) translateX(190px); }
-                .od-3 { transform: translate(-50%, -50%) rotate(240deg) translateX(190px); }
+                .od-1 {
+                    width: 10px; height: 10px;
+                    box-shadow: 0 0 12px rgba(245, 124, 21, 0.9);
+                    transform: translate(-50%, -50%) rotate(0deg) translateX(250px);
+                }
+                .od-2 {
+                    width: 10px; height: 10px;
+                    box-shadow: 0 0 12px rgba(245, 124, 21, 0.9);
+                    transform: translate(-50%, -50%) rotate(120deg) translateX(250px);
+                }
+                .od-3 {
+                    width: 10px; height: 10px;
+                    box-shadow: 0 0 12px rgba(245, 124, 21, 0.9);
+                    transform: translate(-50%, -50%) rotate(240deg) translateX(250px);
+                }
+                .od-4 {
+                    width: 7px; height: 7px;
+                    background: rgba(245, 124, 21, 0.7);
+                    box-shadow: 0 0 8px rgba(245, 124, 21, 0.6);
+                    transform: translate(-50%, -50%) rotate(60deg) translateX(195px);
+                }
+                .od-5 {
+                    width: 7px; height: 7px;
+                    background: rgba(245, 124, 21, 0.7);
+                    box-shadow: 0 0 8px rgba(245, 124, 21, 0.6);
+                    transform: translate(-50%, -50%) rotate(200deg) translateX(195px);
+                }
 
-                /* Static inner ring */
+                /* Static inner rings */
                 .ring-solid {
                     position: absolute;
                     top: 50%; left: 50%;
-                    width: 300px; height: 300px;
-                    margin-top: -150px; margin-left: -150px;
                     border-radius: 50%;
                     border: 1px solid rgba(245, 124, 21, 0.18);
-                    box-shadow: 0 0 60px rgba(245, 124, 21, 0.10),
-                                inset 0 0 60px rgba(245, 124, 21, 0.04);
+                }
+                .ring-solid-1 {
+                    width: 310px; height: 310px;
+                    margin-top: -155px; margin-left: -155px;
+                    box-shadow: 0 0 80px rgba(245, 124, 21, 0.12),
+                                inset 0 0 80px rgba(245, 124, 21, 0.05);
+                }
+                .ring-solid-2 {
+                    width: 200px; height: 200px;
+                    margin-top: -100px; margin-left: -100px;
+                    border-color: rgba(245, 124, 21, 0.10);
                 }
 
                 /* Animated dots */
                 .dots-bg {
                     position: absolute;
-                    width: 80%; height: 80%;
+                    width: 88%; height: 88%;
                     top: 50%; left: 50%;
                     transform: translate(-50%, -50%);
                     background-image: radial-gradient(
@@ -239,7 +282,7 @@ const BookReachSection: React.FC = () => {
                 }
                 @keyframes pulse-dots {
                     0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
-                    50%       { opacity: 1;    transform: translate(-50%, -50%) scale(1.05); }
+                    50%       { opacity: 1;    transform: translate(-50%, -50%) scale(1.06); }
                 }
 
                 /* Platform badges */
@@ -248,8 +291,8 @@ const BookReachSection: React.FC = () => {
                     background: rgba(26, 26, 26, 0.92);
                     border: 1px solid rgba(245, 124, 21, 0.30);
                     border-radius: 8px;
-                    padding: 6px 12px;
-                    font-size: 11px;
+                    padding: 7px 14px;
+                    font-size: 12px;
                     font-weight: 700;
                     color: #f57c15;
                     letter-spacing: 0.4px;
@@ -257,40 +300,49 @@ const BookReachSection: React.FC = () => {
                     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45),
                                 0 0 12px rgba(245, 124, 21, 0.10);
                     z-index: 3;
-                    animation: badge-float 3s ease-in-out infinite;
                     backdrop-filter: blur(8px);
                 }
-                .badge-kindle { top: 6%;   left: 50%; transform: translateX(-50%); animation-delay: 0s; }
-                .badge-apple  { top: 42%;  right: -2%; animation-delay: 0.5s; }
-                .badge-kobo   { bottom: 6%; left: 50%; transform: translateX(-50%); animation-delay: 1s; }
-                .badge-ingram { top: 42%;  left: -2%; animation-delay: 1.5s; }
+                .badge-kindle {
+                    top: 4%; left: 50%;
+                    animation: badge-float-center 3s ease-in-out infinite;
+                    animation-delay: 0s;
+                }
+                .badge-apple {
+                    top: 40%; right: -1%;
+                    animation: badge-float 3s ease-in-out infinite;
+                    animation-delay: 0.5s;
+                }
+                .badge-kobo {
+                    bottom: 4%; left: 50%;
+                    animation: badge-float-center 3s ease-in-out infinite;
+                    animation-delay: 1s;
+                }
+                .badge-ingram {
+                    top: 40%; left: -1%;
+                    animation: badge-float 3s ease-in-out infinite;
+                    animation-delay: 1.5s;
+                }
 
                 @keyframes badge-float {
                     0%, 100% { transform: translateY(0px); }
-                    50%       { transform: translateY(-7px); }
-                }
-                /* Override for centered badges */
-                .badge-kindle, .badge-kobo {
-                    left: 50%;
+                    50%       { transform: translateY(-8px); }
                 }
                 @keyframes badge-float-center {
                     0%, 100% { transform: translateX(-50%) translateY(0px); }
-                    50%       { transform: translateX(-50%) translateY(-7px); }
+                    50%       { transform: translateX(-50%) translateY(-8px); }
                 }
-                .badge-kindle { animation-name: badge-float-center; }
-                .badge-kobo   { animation-name: badge-float-center; }
 
                 /* Book */
                 .book-wrap {
                     position: relative; z-index: 2;
-                    width: 72%;
+                    width: 78%;
                     animation: float-book 3.5s ease-in-out infinite;
-                    filter: drop-shadow(0 16px 48px rgba(0, 0, 0, 0.65))
-                            drop-shadow(0 0 30px rgba(245, 124, 21, 0.12));
+                    filter: drop-shadow(0 20px 56px rgba(0, 0, 0, 0.70))
+                            drop-shadow(0 0 40px rgba(245, 124, 21, 0.15));
                 }
                 @keyframes float-book {
                     0%, 100% { transform: translateY(0px)  rotate(-1deg); }
-                    50%       { transform: translateY(-14px) rotate(1deg); }
+                    50%       { transform: translateY(-16px) rotate(1deg); }
                 }
 
                 /* ── LEFT ── */
@@ -305,7 +357,6 @@ const BookReachSection: React.FC = () => {
                     transform: translateX(0);
                 }
 
-                /* Badge */
                 .reach-badge {
                     display: inline-flex;
                     align-items: center;
@@ -335,10 +386,10 @@ const BookReachSection: React.FC = () => {
 
                 .reach-heading {
                     font-family: Raleway, Arial, sans-serif;
-                    font-size: clamp(2.5rem, 2.5vw, 5.2rem);
+                    font-size: clamp(1.6rem, 2.2vw, 3rem);
                     font-weight: 700;
                     color: #fff;
-                    line-height: 1.2;
+                    line-height: 1.25;
                     margin-bottom: 18px;
                 }
                 .hl { color: #f57c15; }
@@ -351,14 +402,12 @@ const BookReachSection: React.FC = () => {
                 }
 
                 .reach-para {
-                    font-size: 1rem;
+                    font-size: 0.95rem;
                     color: rgba(255, 255, 255, 0.52);
                     line-height: 1.88;
                     margin-bottom: 16px;
-                    max-width: 540px;
                 }
 
-                /* Platform chips */
                 .reach-chips {
                     display: flex;
                     flex-wrap: wrap;
@@ -387,7 +436,6 @@ const BookReachSection: React.FC = () => {
                     flex-shrink: 0;
                 }
 
-                /* Buttons */
                 .reach-btns {
                     display: flex; align-items: center;
                     gap: 14px; flex-wrap: wrap;
@@ -416,11 +464,16 @@ const BookReachSection: React.FC = () => {
                     box-shadow: 0 6px 30px rgba(245, 124, 21, 0.58);
                 }
 
-                /* Responsive */
+                @media (max-width: 900px) {
+                    .reach-right { flex: 0 0 48%; min-height: 520px; }
+                    .ring-outer { width: 420px; height: 420px; margin-top: -210px; margin-left: -210px; }
+                    .ring-mid   { width: 320px; height: 320px; margin-top: -160px; margin-left: -160px; }
+                }
+
                 @media (max-width: 820px) {
                     .reach-section { padding: 50px 24px; }
                     .reach-inner { flex-direction: column; gap: 40px; }
-                    .reach-right { width: 100%; flex: unset; }
+                    .reach-right { width: 100%; flex: unset; min-height: 480px; }
                     .platform-badge { display: none; }
                 }
             `}</style>

@@ -32,7 +32,6 @@ const LogosBar: React.FC = () => {
                                 width: "auto",
                                 height: "32px",
                                 objectFit: "contain",
-                                filter: "brightness(0) invert(1)",
                                 opacity: 0.8,
                             }}
                         />

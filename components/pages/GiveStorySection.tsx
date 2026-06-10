@@ -30,10 +30,7 @@ const GiveStorySection: React.FC = () => {
 
     return (
         <section className="give-section" ref={sectionRef}>
-            {/* Grid overlay */}
             <div className="give-grid" />
-
-            {/* Ambient glows */}
             <div className="give-glow give-glow-l" />
             <div className="give-glow give-glow-r" />
 
@@ -45,11 +42,10 @@ const GiveStorySection: React.FC = () => {
                         <Image
                             src="/images/give-story-img.png"
                             alt="Book Publishing"
-                            width={520}
-                            height={480}
+                            width={620}
+                            height={580}
                             style={{ width: "100%", height: "auto", display: "block" }}
                         />
-                        {/* Orange corner accents */}
                         <div className="corner corner-tl" />
                         <div className="corner corner-br" />
                     </div>
@@ -57,15 +53,14 @@ const GiveStorySection: React.FC = () => {
 
                 {/* RIGHT — Content */}
                 <div className={`give-right${visible ? " slide-in-right" : ""}`}>
-                    {/* Badge */}
                     <div className="give-badge">
                         <span className="badge-dot" />
                         Our Services
                     </div>
 
                     <h2 className="give-heading">
-                        Top Online Book Publishers in {" "}
-                        <span className="hl">USA</span>, Offering Complete Publishing Solutions for Authors Under One Roof 
+                        Top Online Book Publishers in{" "}
+                        <span className="hl">USA</span>, Offering Complete Publishing Solutions for Authors Under One Roof
                     </h2>
 
                     <div className="give-divider" />
@@ -100,7 +95,6 @@ const GiveStorySection: React.FC = () => {
                     overflow: hidden;
                 }
 
-                /* Grid */
                 .give-grid {
                     position: absolute; inset: 0;
                     background-image:
@@ -110,7 +104,6 @@ const GiveStorySection: React.FC = () => {
                     pointer-events: none; z-index: 0;
                 }
 
-                /* Glows */
                 .give-glow {
                     position: absolute; border-radius: 50%;
                     pointer-events: none; z-index: 0;
@@ -126,16 +119,15 @@ const GiveStorySection: React.FC = () => {
                     background: radial-gradient(circle, rgba(245, 124, 21, 0.08) 0%, transparent 65%);
                 }
 
-                /* Layout */
                 .give-inner {
                     position: relative; z-index: 2;
-                    display: flex; align-items: center; gap: 64px;
-                    max-width: 1200px; margin: 0 auto;
+                    display: flex; align-items: center; gap: 44px;
+                    max-width: 1300px; margin: 0 auto;
                 }
 
                 /* LEFT */
                 .give-left {
-                    flex: 0 0 44%;
+                    flex: 0 0 52%;
                     opacity: 0;
                     transform: translateX(-80px);
                     transition: opacity 0.9s ease, transform 0.9s ease;
@@ -146,7 +138,9 @@ const GiveStorySection: React.FC = () => {
 
                 .give-img-frame {
                     position: relative;
-                    border-radius: 24px; overflow: hidden;
+                    border-radius: 24px;
+                    overflow: hidden;
+                    width: 100%;
                     border: 1px solid rgba(245, 124, 21, 0.20);
                     box-shadow: 0 0 60px rgba(245, 124, 21, 0.12),
                                 0 24px 64px rgba(0, 0, 0, 0.55);
@@ -160,7 +154,6 @@ const GiveStorySection: React.FC = () => {
                     pointer-events: none;
                 }
 
-                /* Orange corner accents */
                 .corner { position: absolute; width: 56px; height: 56px; z-index: 2; }
                 .corner-tl {
                     top: -1px; left: -1px;
@@ -186,7 +179,6 @@ const GiveStorySection: React.FC = () => {
                     opacity: 1; transform: translateX(0);
                 }
 
-                /* Badge */
                 .give-badge {
                     display: inline-flex; align-items: center; gap: 8px;
                     background: rgba(245, 124, 21, 0.10);
@@ -207,10 +199,10 @@ const GiveStorySection: React.FC = () => {
 
                 .give-heading {
                     font-family: Raleway, Arial, sans-serif;
-                    font-size: clamp(2rem, 2.5vw, 4rem);
+                    font-size: clamp(1.6rem, 2.2vw, 3rem);
                     font-weight: 900;
                     color: #fff;
-                    line-height: 1.2; margin-bottom: 16px;
+                    line-height: 1.25; margin-bottom: 16px;
                 }
                 .hl { color: #f57c15; }
 
@@ -221,11 +213,10 @@ const GiveStorySection: React.FC = () => {
                 }
 
                 .give-desc {
-                    font-size: 1rem; color: rgba(255, 255, 255, 0.52);
-                    line-height: 1.88; margin-bottom: 26px; max-width: 500px;
+                    font-size: 0.95rem; color: rgba(255, 255, 255, 0.52);
+                    line-height: 1.88; margin-bottom: 26px;
                 }
 
-                /* Service items */
                 .give-services {
                     display: grid; grid-template-columns: 1fr 1fr;
                     gap: 12px; margin-bottom: 32px;
@@ -253,7 +244,6 @@ const GiveStorySection: React.FC = () => {
                     font-size: 11px; color: #f57c15; font-weight: 700;
                 }
 
-                /* Buttons */
                 .give-btns { display: flex; gap: 14px; flex-wrap: wrap; }
                 .btn-dark {
                     background: rgba(255, 255, 255, 0.08); color: #fff;
@@ -278,7 +268,11 @@ const GiveStorySection: React.FC = () => {
                     box-shadow: 0 6px 30px rgba(245, 124, 21, 0.56);
                 }
 
-                /* Responsive */
+                @media (max-width: 900px) {
+                    .give-section { padding: 60px 40px; }
+                    .give-left { flex: 0 0 48%; }
+                }
+
                 @media (max-width: 820px) {
                     .give-section { padding: 50px 20px; }
                     .give-inner { flex-direction: column; gap: 36px; }
