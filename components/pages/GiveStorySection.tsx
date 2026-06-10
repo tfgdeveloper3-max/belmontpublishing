@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link"; // ← CHANGE: lucide-react ki jagah next/link import kiya
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -79,8 +80,8 @@ const GiveStorySection: React.FC = () => {
                     </div>
 
                     <div className="give-btns">
-                        <button className="btn-dark">Get Started</button>
-                        <button className="btn-orange">Live Chat</button>
+                        <Link href="/contact" className="btn-orange">Get Started</Link>
+                        <a href="tel:2797770381" className="btn-dark">(279) 777-0381</a>
                     </div>
                 </div>
 
@@ -102,6 +103,55 @@ const GiveStorySection: React.FC = () => {
                         linear-gradient(90deg, rgba(245, 124, 21, 0.035) 1px, transparent 1px);
                     background-size: 48px 48px;
                     pointer-events: none; z-index: 0;
+                }
+
+                .give-btns {
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    gap: 14px;
+                    flex-wrap: wrap;
+                }
+
+                /* ── Global CSS for Link & a tags ── */
+                :global(.btn-dark) {
+                    background: #111;
+                    color: #fff !important;
+                    border: none;
+                    padding: 14px 38px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    font-family: Raleway, Arial, sans-serif;
+                    transition: background 0.2s, box-shadow 0.2s;
+                    letter-spacing: 0.3px;
+                    text-decoration: none !important;
+                    display: inline-block;
+                }
+                :global(.btn-dark):hover {
+                    background: #333;
+                    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
+                }
+                :global(.btn-orange) {
+                    background: #f57c15;
+                    color: #fff !important;
+                    border: none;
+                    padding: 14px 38px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    font-family: Raleway, Arial, sans-serif;
+                    transition: background 0.2s, box-shadow 0.2s;
+                    letter-spacing: 0.3px;
+                    box-shadow: 0 4px 20px rgba(245, 124, 21, 0.38);
+                    text-decoration: none !important;
+                    display: inline-block;
+                }
+                :global(.btn-orange):hover {
+                    background: #d96a0a;
+                    box-shadow: 0 6px 28px rgba(245, 124, 21, 0.52);
                 }
 
                 .give-glow {
@@ -242,30 +292,6 @@ const GiveStorySection: React.FC = () => {
                     border: 1px solid rgba(245, 124, 21, 0.34);
                     display: flex; align-items: center; justify-content: center;
                     font-size: 11px; color: #f57c15; font-weight: 700;
-                }
-
-                .give-btns { display: flex; gap: 14px; flex-wrap: wrap; }
-                .btn-dark {
-                    background: rgba(255, 255, 255, 0.08); color: #fff;
-                    border: 1px solid rgba(255, 255, 255, 0.16);
-                    padding: 13px 32px; border-radius: 6px;
-                    font-size: 14px; font-weight: 700; cursor: pointer;
-                    font-family: "Nunito Sans", sans-serif;
-                    backdrop-filter: blur(8px);
-                    transition: background 0.2s;
-                }
-                .btn-dark:hover { background: rgba(255, 255, 255, 0.14); }
-                .btn-orange {
-                    background: #f57c15; color: #fff; border: none;
-                    padding: 13px 32px; border-radius: 6px;
-                    font-size: 14px; font-weight: 700; cursor: pointer;
-                    font-family: "Nunito Sans", sans-serif;
-                    box-shadow: 0 4px 22px rgba(245, 124, 21, 0.40);
-                    transition: background 0.2s, box-shadow 0.2s;
-                }
-                .btn-orange:hover {
-                    background: #d96a0a;
-                    box-shadow: 0 6px 30px rgba(245, 124, 21, 0.56);
                 }
 
                 @media (max-width: 900px) {

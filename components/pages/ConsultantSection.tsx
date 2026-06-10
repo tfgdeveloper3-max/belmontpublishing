@@ -1,3 +1,4 @@
+import Link from "next/link"; // ← CHANGE: lucide-react ki jagah next/link import kiya
 import Image from "next/image";
 
 interface ServiceCard {
@@ -106,8 +107,8 @@ const ConsultantsSection: React.FC = () => {
                 </div>
 
                 <div className="consult-btns">
-                    <button className="btn-dark">Get Started</button>
-                    <button className="btn-orange">Live Chat</button>
+                    <Link href="/contact" className="btn-orange">Get Started</Link>
+                    <a href="tel:2797770381" className="btn-dark">(279) 777-0381</a>
                 </div>
             </div>
 
@@ -302,9 +303,11 @@ const ConsultantsSection: React.FC = () => {
                     gap: 14px;
                     flex-wrap: wrap;
                 }
-                .btn-dark {
+
+                /* ── Global CSS for Link & a tags ── */
+                :global(.btn-dark) {
                     background: #111;
-                    color: #fff;
+                    color: #fff !important;
                     border: none;
                     padding: 14px 38px;
                     border-radius: 6px;
@@ -314,14 +317,16 @@ const ConsultantsSection: React.FC = () => {
                     font-family: Raleway, Arial, sans-serif;
                     transition: background 0.2s, box-shadow 0.2s;
                     letter-spacing: 0.3px;
+                    text-decoration: none !important;
+                    display: inline-block;
                 }
-                .btn-dark:hover {
+                :global(.btn-dark):hover {
                     background: #333;
                     box-shadow: 0 4px 18px rgba(0, 0, 0, 0.18);
                 }
-                .btn-orange {
+                :global(.btn-orange) {
                     background: #f57c15;
-                    color: #fff;
+                    color: #fff !important;
                     border: none;
                     padding: 14px 38px;
                     border-radius: 6px;
@@ -332,8 +337,10 @@ const ConsultantsSection: React.FC = () => {
                     transition: background 0.2s, box-shadow 0.2s;
                     letter-spacing: 0.3px;
                     box-shadow: 0 4px 20px rgba(245, 124, 21, 0.38);
+                    text-decoration: none !important;
+                    display: inline-block;
                 }
-                .btn-orange:hover {
+                :global(.btn-orange):hover {
                     background: #d96a0a;
                     box-shadow: 0 6px 28px rgba(245, 124, 21, 0.52);
                 }

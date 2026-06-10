@@ -20,7 +20,7 @@ const BrandSection: React.FC = () => {
                     alt="World Map"
                     width={1500}
                     height={750}
-                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.12 }}
+                    style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", opacity: 0.4 }}
                     priority
                 />
             </div>
@@ -38,12 +38,12 @@ const BrandSection: React.FC = () => {
                 <div className="brand-text">
                     <span className="brand-badge">Global Reach</span>
                     <h2 className="brand-heading">
-                        Your Book, Distributed<br />
-                        <span className="hl">Across The World</span>
+                        Meet Millions of Potential Readers <br />
+                        <span className="hl">Worldwide</span>
                     </h2>
                     <div className="brand-divider" />
                     <p className="brand-desc">
-                        From North America to Europe, Asia to Australia — Belmont Publishing ensures your book reaches readers in every corner of the globe through the world's most powerful distribution platforms.
+                        Your audience isn't limited by geography, and neither should your book be. We distribute your work through an extensive international network, helping you reach readers across continents while establishing a professional and credible author presence on a global scale.
                     </p>
                 </div>
 
@@ -75,7 +75,7 @@ const BrandSection: React.FC = () => {
             <style jsx>{`
                 .brand-section {
                     background: #fff;
-                    font-family: "Nunito Sans", sans-serif;
+                    font-family: Raleway, sans-serif;
                     position: relative;
                     overflow: hidden;
                     padding: 80px 60px;

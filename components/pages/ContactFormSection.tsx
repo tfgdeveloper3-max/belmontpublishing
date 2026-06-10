@@ -37,7 +37,7 @@ const ContactFormSection: React.FC = () => {
                     alt="Contact Background"
                     fill
                     priority
-                    style={{ objectFit: "cover", objectPosition: "left center" }}
+                    style={{ objectFit: "contain", objectPosition: "left center" }}
                 />
                 <div className="contact-overlay" />
             </div>

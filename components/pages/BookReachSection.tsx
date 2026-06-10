@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link"; // ← CHANGE: lucide-react ki jagah next/link import kiya
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -62,8 +63,8 @@ const BookReachSection: React.FC = () => {
                     </div>
 
                     <div className="reach-btns">
-                        <button className="btn-dark">Get Started</button>
-                        <button className="btn-orange">Live Chat</button>
+                        <Link href="/contact" className="btn-orange">Get Started</Link>
+                        <a href="tel:2797770381" className="btn-dark">(279) 777-0381</a>
                     </div>
                 </div>
 
@@ -440,29 +441,35 @@ const BookReachSection: React.FC = () => {
                     display: flex; align-items: center;
                     gap: 14px; flex-wrap: wrap;
                 }
-                .btn-dark {
+
+                /* ── Global CSS for Link & a tags ── */
+                :global(.btn-orange) {
+                    background: #f57c15; color: #fff !important; border: none;
+                    padding: 13px 32px; border-radius: 6px;
+                    font-size: 14px; font-weight: 700; cursor: pointer;
+                    font-family: Raleway, Arial, sans-serif;
+                    transition: background 0.2s, box-shadow 0.2s;
+                    box-shadow: 0 4px 22px rgba(245, 124, 21, 0.40);
+                    text-decoration: none !important;
+                    display: inline-block;
+                }
+                :global(.btn-orange):hover {
+                    background: #d96a0a;
+                    box-shadow: 0 6px 30px rgba(245, 124, 21, 0.58);
+                }
+                :global(.btn-dark) {
                     background: rgba(255, 255, 255, 0.08);
-                    color: #fff;
+                    color: #fff !important;
                     border: 1px solid rgba(255, 255, 255, 0.16);
                     padding: 13px 32px; border-radius: 6px;
                     font-size: 14px; font-weight: 700; cursor: pointer;
                     font-family: Raleway, Arial, sans-serif;
                     transition: background 0.2s, box-shadow 0.2s;
                     backdrop-filter: blur(8px);
+                    text-decoration: none !important;
+                    display: inline-block;
                 }
-                .btn-dark:hover { background: rgba(255, 255, 255, 0.14); }
-                .btn-orange {
-                    background: #f57c15; color: #fff; border: none;
-                    padding: 13px 32px; border-radius: 6px;
-                    font-size: 14px; font-weight: 700; cursor: pointer;
-                    font-family: Raleway, Arial, sans-serif;
-                    transition: background 0.2s, box-shadow 0.2s;
-                    box-shadow: 0 4px 22px rgba(245, 124, 21, 0.40);
-                }
-                .btn-orange:hover {
-                    background: #d96a0a;
-                    box-shadow: 0 6px 30px rgba(245, 124, 21, 0.58);
-                }
+                :global(.btn-dark):hover { background: rgba(255, 255, 255, 0.14); }
 
                 @media (max-width: 900px) {
                     .reach-right { flex: 0 0 48%; min-height: 520px; }

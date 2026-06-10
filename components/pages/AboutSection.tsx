@@ -39,7 +39,7 @@ const AboutSection: React.FC = () => {
         </p>
 
         <Link href="/contact" className="hero-btn">
-          Start Your Next Best Seller
+          Be The Next Best Seller
           <span className="hero-btn-icon">→</span>
         </Link>
 

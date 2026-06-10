@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 interface FormData {
@@ -42,9 +43,8 @@ const HeroSection: React.FC = () => {
                     </p>
 
                     <div className="hero-btns">
-                        <button className="btn-dark">Get Started</button>
-                        <button className="btn-orange">Live Chat</button>
-                        <button className="btn-phone">(646) 298 6438</button>
+                        <Link href="/contact" className="btn-orange">Get Started</Link>
+                        <a href="tel:2797770381" className="btn-dark">(279) 777-0381</a>
                     </div>
                 </div>
 
@@ -84,12 +84,44 @@ const HeroSection: React.FC = () => {
 
                 .hero-desc { font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 32px; max-width: 560px; }
                 .hero-btns { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
-                .btn-dark { background: #111; color: #fff; border: 1px solid rgba(255,255,255,0.15); padding: 13px 26px; border-radius: 4px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: Raleway, Arial, sans-serif; transition: background 0.2s; }
-                .btn-dark:hover { background: #222; }
-                .btn-orange { background: #f57c15; color: #fff; border: none; padding: 13px 26px; border-radius: 4px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: Raleway, Arial, sans-serif; transition: background 0.2s; }
-                .btn-orange:hover { background: #d96a0a; }
-                .btn-phone { background: #111; color: #fff; border: 1px solid rgba(255,255,255,0.15); padding: 13px 26px; border-radius: 4px; font-size: 13px; font-weight: 700; cursor: pointer; font-family: Raleway, Arial, sans-serif; transition: background 0.2s; }
-                .btn-phone:hover { background: #222; }
+                
+                /* ── Global CSS for Links & Buttons ── */
+                :global(.btn-orange) { 
+                    background: #f57c15; 
+                    color: #fff !important; 
+                    border: none; 
+                    padding: 13px 26px; 
+                    border-radius: 4px; 
+                    font-size: 13px; 
+                    font-weight: 700; 
+                    cursor: pointer; 
+                    font-family: Raleway, Arial, sans-serif; 
+                    transition: background 0.2s, box-shadow 0.2s; 
+                    text-decoration: none; 
+                    display: inline-block;
+                    box-shadow: 0 4px 20px rgba(245, 124, 21, 0.38);
+                }
+                :global(.btn-orange):hover { 
+                    background: #d96a0a; 
+                    box-shadow: 0 6px 28px rgba(245, 124, 21, 0.52);
+                }
+                
+                :global(.btn-dark) { 
+                    background: #111; 
+                    color: #fff !important; 
+                    border: 1px solid rgba(255,255,255,0.15); 
+                    padding: 13px 26px; 
+                    border-radius: 4px; 
+                    font-size: 13px; 
+                    font-weight: 700; 
+                    cursor: pointer; 
+                    font-family: Raleway, Arial, sans-serif; 
+                    transition: background 0.2s; 
+                    text-decoration: none; 
+                    display: inline-block; 
+                }
+                :global(.btn-dark):hover { background: #333; }
+                
                 .hero-trust { display: flex; gap: 10px; flex-wrap: wrap; }
                 .trust-badge { background: #fff; border-radius: 6px; padding: 10px 18px; display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: #222; }
                 .trust-star { color: #f5a623; font-size: 15px; }
@@ -98,9 +130,9 @@ const HeroSection: React.FC = () => {
                 .hero-form { background: #fff; border-radius: 8px; padding: 30px 26px; display: flex; flex-direction: column; gap: 14px; }
                 .form-title { text-align: center; font-size: 16px; font-weight: 800; color: #111; letter-spacing: 0.5px; margin-bottom: 4px; }
                 .form-title span { color: #f57c15; }
-                .form-input { width: 100%; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; font-size: 13px; color: #333; font-family: Raleway, Arial, sans-serif; outline: none; transition: border-color 0.2s; background: #fff; }
+                .form-input { width: 100%; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; font-size: 13px; color: #333; font-family: Raleway, Arial, sans-serif; outline: none; transition: border-color 0.2s; background: #fff; box-sizing: border-box; }
                 .form-input:focus { border-color: #f57c15; }
-                .form-textarea { width: 100%; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; font-size: 13px; color: #333; font-family: Raleway, Arial, sans-serif; outline: none; resize: vertical; transition: border-color 0.2s; background: #fff; }
+                .form-textarea { width: 100%; border: 1px solid #ddd; border-radius: 4px; padding: 12px 14px; font-size: 13px; color: #333; font-family: Raleway, Arial, sans-serif; outline: none; resize: vertical; transition: border-color 0.2s; background: #fff; box-sizing: border-box; }
                 .form-textarea:focus { border-color: #f57c15; }
                 .form-btn { width: 100%; background: #f57c15; color: #fff; border: none; border-radius: 4px; padding: 14px; font-size: 15px; font-weight: 700; cursor: pointer; font-family: Raleway, Arial, sans-serif; transition: background 0.2s; margin-top: 4px; }
                 .form-btn:hover { background: #d96a0a; }

@@ -1,3 +1,4 @@
+import Link from "next/link"; // ← ADD: next/link import kiya
 import Image from "next/image";
 
 const DiscountBannerSection: React.FC = () => {
@@ -31,9 +32,8 @@ const DiscountBannerSection: React.FC = () => {
                         Join hundreds of authors who have successfully brought their books to market with our guidance. Book Your Free Consultation Now.
                     </p>
                     <div className="disc-btns">
-                        <button className="btn-dark">Get Started</button>
-                        <button className="btn-orange">Live Chat</button>
-                        <button className="btn-phone">(646) 298 6438</button>
+                        <Link href="/contact" className="btn-orange">Get Started</Link>
+                        <a href="tel:2797770381" className="btn-dark">(279) 777-0381</a>
                     </div>
                 </div>
             </div>
@@ -99,23 +99,10 @@ const DiscountBannerSection: React.FC = () => {
                     flex-wrap: wrap;
                 }
 
-                .btn-dark {
-                    background: #111;
-                    color: #fff;
-                    border: none;
-                    padding: 13px 28px;
-                    border-radius: 4px;
-                    font-size: 13px;
-                    font-weight: 700;
-                    cursor: pointer;
-                    font-family: "Nunito Sans", sans-serif;
-                    transition: background 0.2s;
-                }
-                .btn-dark:hover { background: #333; }
-
-                .btn-orange {
+                /* ── Global CSS for Link & a tags ── */
+                :global(.btn-orange) {
                     background: #f57c15;
-                    color: #fff;
+                    color: #fff !important;
                     border: none;
                     padding: 13px 28px;
                     border-radius: 4px;
@@ -124,12 +111,14 @@ const DiscountBannerSection: React.FC = () => {
                     cursor: pointer;
                     font-family: "Nunito Sans", sans-serif;
                     transition: background 0.2s;
+                    text-decoration: none !important;
+                    display: inline-block;
                 }
-                .btn-orange:hover { background: #d96a0a; }
+                :global(.btn-orange):hover { background: #d96a0a; }
 
-                .btn-phone {
+                :global(.btn-dark) {
                     background: #111;
-                    color: #fff;
+                    color: #fff !important;
                     border: 1px solid rgba(255,255,255,0.2);
                     padding: 13px 28px;
                     border-radius: 4px;
@@ -138,8 +127,10 @@ const DiscountBannerSection: React.FC = () => {
                     cursor: pointer;
                     font-family: "Nunito Sans", sans-serif;
                     transition: background 0.2s;
+                    text-decoration: none !important;
+                    display: inline-block;
                 }
-                .btn-phone:hover { background: #333; }
+                :global(.btn-dark):hover { background: #333; }
 
                 @media (max-width: 820px) {
                     .disc-inner {

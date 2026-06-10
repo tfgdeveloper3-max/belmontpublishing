@@ -36,7 +36,6 @@ const FooterSection: React.FC = () => {
             <div className="footer-glow footer-glow-tl" />
             <div className="footer-glow footer-glow-br" />
 
-            {/* ── Main columns ── */}
             <div className="footer-inner">
 
                 {/* Brand + contact */}
@@ -59,15 +58,23 @@ const FooterSection: React.FC = () => {
                     <div className="footer-contact">
                         <div className="contact-item">
                             <span className="contact-icon">✉</span>
-                            <span>info@authorsbookpublishing.com</span>
+                            <a href="mailto:info@belmontpublishing.com">
+                                info@belmontpublishing.com
+                            </a>
                         </div>
                         <div className="contact-item">
                             <span className="contact-icon">📞</span>
-                            <span>(646) 298 6438</span>
+                            <a href="tel:2797770381">(279) 777-0381</a>
                         </div>
                         <div className="contact-item">
                             <span className="contact-icon">📍</span>
-                            <span>140 Broadway, 46th floor, New York,<br />NY, 10005</span>
+                            <a
+                                href="https://maps.google.com/?q=901+H+St+Ste+120+Sacramento+CA+95814"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                901 H St Ste 120,<br />Sacramento, CA 95814
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -112,7 +119,7 @@ const FooterSection: React.FC = () => {
                 </div>
             </div>
 
-            {/* ── Bottom bar ── */}
+            {/* Bottom bar */}
             <div className="footer-bottom">
                 <p className="footer-copy">
                     Copyright © Belmont Publishing<br />
@@ -185,30 +192,25 @@ const FooterSection: React.FC = () => {
                     background: radial-gradient(circle, rgba(245,124,21,0.07) 0%, transparent 65%);
                 }
 
-                /* ── Columns row ── */
                 .footer-inner {
                     position: relative; z-index: 2;
                     display: flex;
-                    align-items: flex-start;       /* all cols start at top */
+                    align-items: flex-start;
                     gap: 40px;
                     max-width: 1300px;
                     margin: 0 auto;
                     padding-bottom: 48px;
                     border-bottom: 1px solid rgba(245,124,21,0.12);
-                    flex-wrap: nowrap;             /* keep on one row on desktop */
+                    flex-wrap: nowrap;
                 }
 
-                /* Brand column — fixed width, no shrink */
                 .footer-brand {
                     flex: 0 0 220px;
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
                 }
-
-                .footer-logo {
-                    line-height: 0;               /* removes phantom whitespace below img */
-                }
+                .footer-logo { line-height: 0; }
 
                 .footer-contact {
                     display: flex;
@@ -219,10 +221,16 @@ const FooterSection: React.FC = () => {
                     display: flex;
                     align-items: flex-start;
                     gap: 10px;
-                    font-size: 12.5px;
-                    color: rgba(255,255,255,0.58);
                     line-height: 1.65;
                 }
+                .contact-item a {
+                    font-size: 12.5px;
+                    color: rgba(255,255,255,0.58);
+                    text-decoration: none;
+                    line-height: 1.65;
+                    transition: color 0.2s;
+                }
+                .contact-item a:hover { color: #f57c15; }
                 .contact-icon {
                     width: 28px; height: 28px;
                     border-radius: 7px; flex-shrink: 0;
@@ -233,11 +241,7 @@ const FooterSection: React.FC = () => {
                     margin-top: 1px;
                 }
 
-                /* Service columns — equal flex */
-                .footer-col {
-                    flex: 1;
-                    min-width: 0;
-                }
+                .footer-col { flex: 1; min-width: 0; }
                 .footer-col-title {
                     font-size: 13px;
                     font-weight: 700;
@@ -282,7 +286,6 @@ const FooterSection: React.FC = () => {
                 }
                 .footer-col :global(a:hover) { color: #f57c15; }
 
-                /* ── Bottom bar ── */
                 .footer-bottom {
                     position: relative; z-index: 2;
                     max-width: 1300px;
@@ -337,7 +340,6 @@ const FooterSection: React.FC = () => {
                     flex-shrink: 0;
                 }
 
-                /* ── Tablet (≤1024px) ── */
                 @media (max-width: 1024px) {
                     .footer { padding: 48px 32px 0; }
                     .footer-inner { gap: 28px; }
@@ -345,27 +347,11 @@ const FooterSection: React.FC = () => {
                     .footer-col :global(a) { white-space: normal; }
                 }
 
-                /* ── Mobile (≤768px) ── */
                 @media (max-width: 768px) {
                     .footer { padding: 44px 20px 0; }
-
-                    .footer-inner {
-                        flex-wrap: wrap;       /* stack on mobile */
-                        gap: 32px;
-                    }
-
-                    /* Full width brand on mobile */
-                    .footer-brand {
-                        flex: 0 0 100%;
-                        width: 100%;
-                    }
-
-                    /* 2 columns for service lists */
-                    .footer-col {
-                        flex: 0 0 calc(50% - 16px);
-                        min-width: 0;
-                    }
-
+                    .footer-inner { flex-wrap: wrap; gap: 32px; }
+                    .footer-brand { flex: 0 0 100%; width: 100%; }
+                    .footer-col { flex: 0 0 calc(50% - 16px); min-width: 0; }
                     .footer-bottom {
                         flex-direction: column;
                         align-items: flex-start;
@@ -373,20 +359,13 @@ const FooterSection: React.FC = () => {
                     }
                 }
 
-                /* ── Small mobile (≤480px) ── */
                 @media (max-width: 480px) {
-                    /* 1 column for service lists */
-                    .footer-col {
-                        flex: 0 0 100%;
-                    }
-                    .footer-bottom {
-                        align-items: center;
-                        text-align: center;
-                    }
+                    .footer-col { flex: 0 0 100%; }
+                    .footer-bottom { align-items: center; text-align: center; }
                     .footer-copy { text-align: center; width: 100%; }
                 }
             `}</style>
-        </footer>
+        </footer >
     );
 };
 

@@ -92,9 +92,8 @@ const Navbar: React.FC = () => {
                 <ul className="nav-links">
                     <li><Link href="/">HOME</Link></li>
                     <li><Link href="/#about">ABOUT</Link></li>
-                    <li><Link href="/#portfolio">PORTFOLIO</Link></li>
-                    <li><Link href="/#Blogs">BLOGS</Link></li>
                     <li><Link href="/#services">SERVICES</Link></li>
+                    <li><Link href="/#portfolio">PORTFOLIO</Link></li>
 
                     {/* ── Services mega dropdown ── */}
                     {/* <li
@@ -170,9 +169,8 @@ const Navbar: React.FC = () => {
                     >
                         <li><Link href="/" onClick={() => setMobileOpen(false)}>HOME</Link></li>
                         <li><Link href="/#about" onClick={() => setMobileOpen(false)}>ABOUT</Link></li>
-                        <li><Link href="/#portfolio" onClick={() => setMobileOpen(false)}>PORTFOLIO</Link></li>
-                        <li><Link href="/#Blogs" onClick={() => setMobileOpen(false)}>BLOGS</Link></li>
                         <li><Link href="/#services" onClick={() => setMobileOpen(false)}>SERVICES</Link></li>
+                        <li><Link href="/#portfolio" onClick={() => setMobileOpen(false)}>PORTFOLIO</Link></li>
 
                         {/* Mobile Services Accordion */}
                         {/* <li>

@@ -33,9 +33,9 @@ const contactItems = [
             </svg>
         ),
         label: "Phone",
-        value: "(646) 298 6438",
+        value: "(279) 777-0381",
         sub: "Mon – Fri, 9am – 6pm EST",
-        href: "tel:6462986438",
+        href: "tel:2797770381",
     },
     {
         icon: (
@@ -44,9 +44,9 @@ const contactItems = [
             </svg>
         ),
         label: "Email",
-        value: "info@authonsbookpublishing.com",
+        value: "info@belmontpublishing.com",
         sub: "We reply within 24 hours",
-        href: "mailto:info@authonsbookpublishing.com",
+        href: "mailto:info@belmontpublishing.com",
     },
     {
         icon: (
@@ -55,9 +55,9 @@ const contactItems = [
             </svg>
         ),
         label: "Office",
-        value: "140 Broadway, 46th Floor",
-        sub: "New York, NY 10005",
-        href: "https://maps.google.com",
+        value: "901 H St Ste 120",
+        sub: "Sacramento, CA 95814",
+        href: "https://maps.google.com/?q=901+H+St+Ste+120+Sacramento+CA+95814",
     },
 ];
 
@@ -110,7 +110,6 @@ export default function ContactPage() {
                             <span className="ct-trust-item">✓ Marketing & Distribution Support</span>
                         </div>
                     </div>
-                    {/* Decorative lines */}
                     <div className="ct-deco-line ct-dl-1" />
                     <div className="ct-deco-line ct-dl-2" />
                 </section>
@@ -121,7 +120,6 @@ export default function ContactPage() {
 
                         {/* ── Left: Contact Info ── */}
                         <div className="ct-left">
-
                             <div className="ct-info-block">
                                 <h2 className="ct-info-title">Speak With Our<br /><span className="ct-hl">Publishing Strategists</span></h2>
                                 <p className="ct-info-sub">
@@ -168,7 +166,6 @@ export default function ContactPage() {
                                     Emergency consultations available 7 days via email.
                                 </div>
                             </div>
-
                         </div>
 
                         {/* ── Right: Form ── */}
@@ -182,7 +179,6 @@ export default function ContactPage() {
                                         </div>
 
                                         <div className="ct-form">
-                                            {/* Name row */}
                                             <div className="ct-field-row">
                                                 <div className="ct-field">
                                                     <label className="ct-label">First Name <span className="ct-req">*</span></label>
@@ -190,7 +186,7 @@ export default function ContactPage() {
                                                         name="firstName"
                                                         value={formData.firstName}
                                                         onChange={handleChange}
-                                                        placeholder="firstName"
+                                                        placeholder="First Name"
                                                         className="ct-input"
                                                     />
                                                 </div>
@@ -200,13 +196,12 @@ export default function ContactPage() {
                                                         name="lastName"
                                                         value={formData.lastName}
                                                         onChange={handleChange}
-                                                        placeholder="lastName"
+                                                        placeholder="Last Name"
                                                         className="ct-input"
                                                     />
                                                 </div>
                                             </div>
 
-                                            {/* Email + Phone */}
                                             <div className="ct-field-row">
                                                 <div className="ct-field">
                                                     <label className="ct-label">Email Address <span className="ct-req">*</span></label>
@@ -232,7 +227,6 @@ export default function ContactPage() {
                                                 </div>
                                             </div>
 
-                                            {/* Service */}
                                             <div className="ct-field">
                                                 <label className="ct-label">Service Interested In <span className="ct-req">*</span></label>
                                                 <select
@@ -248,7 +242,6 @@ export default function ContactPage() {
                                                 </select>
                                             </div>
 
-                                            {/* Budget */}
                                             <div className="ct-field">
                                                 <label className="ct-label">Estimated Budget</label>
                                                 <select
@@ -267,7 +260,6 @@ export default function ContactPage() {
                                                 </select>
                                             </div>
 
-                                            {/* Message */}
                                             <div className="ct-field">
                                                 <label className="ct-label">Tell Us About Your Project <span className="ct-req">*</span></label>
                                                 <textarea
@@ -322,7 +314,7 @@ export default function ContactPage() {
                     <div className="ct-faq-inner">
                         <div className="ct-faq-head">
                             <span className="ct-eyebrow">Before We Begin</span>
-                            <h2 className="ct-faq-title">Few Questions You May <span className="ct-hl">Want to Know </span></h2>
+                            <h2 className="ct-faq-title">Few Questions You May <span className="ct-hl">Want to Know</span></h2>
                         </div>
                         <div className="ct-faq-grid">
                             {faqs.map((item, i) => (
@@ -343,12 +335,12 @@ export default function ContactPage() {
                             <h2 className="ct-bottom-title">Can We Ask You Something?</h2>
                             <p className="ct-bottom-sub">If not now, when? Not knowing where to start? Call us today, and get your answer!</p>
                         </div>
-                        <a href="tel:6462986438" style={{ textDecoration: "none" }}>
+                        <a href="tel:2797770381" style={{ textDecoration: "none" }}>
                             <button className="ct-call-btn">
                                 <svg width="18" height="18" viewBox="0 0 22 22" fill="none">
                                     <path d="M20 14.92a1.65 1.65 0 00-1.18-.46 1.65 1.65 0 00-1.18.46l-1.42 1.41a14.13 14.13 0 01-3.5-2.95 14.13 14.13 0 01-2.95-3.5l1.41-1.42A1.65 1.65 0 0011.54 7a1.65 1.65 0 00-.46-1.18L8.7 3.44A1.65 1.65 0 007.52 2.98a1.65 1.65 0 00-1.18.46L5 4.78C3.65 6.13 3.1 8.02 3.74 9.73a23.6 23.6 0 005.4 8.13 23.6 23.6 0 008.13 5.4c1.71.64 3.6.09 4.95-1.26l1.34-1.34A1.65 1.65 0 0024 19.48a1.65 1.65 0 00-.46-1.18L20 14.92z" fill="currentColor" />
                                 </svg>
-                                (646) 298 6438
+                                (279) 777-0381
                             </button>
                         </a>
                     </div>
@@ -359,7 +351,6 @@ export default function ContactPage() {
                 .ct-eyebrow { display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:3px; text-transform:uppercase; color:#f57c15; margin-bottom:14px; }
                 .ct-hl { color:#f57c15; }
 
-                /* ══ HERO ══ */
                 .ct-hero { background:#060606; padding:90px 24px 80px; position:relative; overflow:hidden; text-align:center; }
                 .ct-hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse 70% 60% at 50% 40%, rgba(245,124,21,0.07) 0%, transparent 65%); pointer-events:none; }
                 .ct-hero-inner { max-width:700px; margin:0 auto; position:relative; z-index:2; }
@@ -372,16 +363,13 @@ export default function ContactPage() {
                 .ct-dl-1 { left:8%; }
                 .ct-dl-2 { right:8%; }
 
-                /* ══ MAIN ══ */
                 .ct-main { background:#f9f8f7; padding:80px 24px 90px; }
                 .ct-main-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:420px 1fr; gap:60px; align-items:start; }
 
-                /* Left info */
                 .ct-info-block { margin-bottom:36px; }
                 .ct-info-title { font-family:Raleway,sans-serif; font-size:clamp(1.8rem,3vw,2.4rem); color:#111; text-transform:uppercase; line-height:1.1; margin:0 0 16px 0; letter-spacing:-0.3px; }
                 .ct-info-sub { font-size:1rem; color:#666; line-height:1.75; margin:0; }
 
-                /* Contact cards */
                 .ct-contact-items { display:flex; flex-direction:column; gap:10px; margin-bottom:24px; }
                 .ct-contact-card { display:flex; align-items:center; gap:18px; background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:8px; padding:18px 20px; transition:border-color 0.25s,box-shadow 0.25s,transform 0.25s; cursor:pointer; }
                 .ct-contact-card:hover { border-color:rgba(245,124,21,0.3); box-shadow:0 6px 20px rgba(245,124,21,0.07); transform:translateX(4px); }
@@ -391,7 +379,6 @@ export default function ContactPage() {
                 .ct-cc-value { font-size:13.5px; font-weight:700; color:#111; }
                 .ct-cc-sub { font-size:1rem; color:#999; }
 
-                /* Hours */
                 .ct-hours-card { background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:8px; padding:24px 20px; }
                 .ct-hours-title { font-family:Raleway,sans-serif; font-size:1rem; font-weight:600; color:#111; text-transform:uppercase; margin:0 0 16px 0; letter-spacing:0.5px; }
                 .ct-hours-grid { display:grid; grid-template-columns:1fr 1fr; gap:6px 0; margin-bottom:16px; }
@@ -400,14 +387,12 @@ export default function ContactPage() {
                 .ct-hours-note { display:flex; align-items:center; gap:8px; font-size:11.5px; color:#999; padding-top:12px; border-top:1px solid rgba(0,0,0,0.05); }
                 .ct-hn-dot { width:6px; height:6px; border-radius:50%; background:#22c55e; flex-shrink:0; box-shadow:0 0 6px rgba(34,197,94,0.4); }
 
-                /* ── Form card ── */
                 .ct-form-card { background:#fff; border:1px solid rgba(0,0,0,0.07); border-radius:12px; padding:44px 40px; box-shadow:0 4px 24px rgba(0,0,0,0.05); position:relative; overflow:hidden; }
                 .ct-form-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,#f57c15,rgba(245,124,21,0.4)); }
                 .ct-form-head { margin-bottom:32px; }
                 .ct-form-title { font-family:Raleway,sans-serif; font-size:22px; font-weight:600; color:#111; text-transform:uppercase; margin:0 0 8px 0; letter-spacing:0.3px; }
                 .ct-form-sub { font-size:1rem; color:#888; margin:0; }
 
-                /* Form fields */
                 .ct-field-row { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
                 .ct-field { display:flex; flex-direction:column; gap:6px; margin-bottom:16px; }
                 .ct-field:last-of-type { margin-bottom:24px; }
@@ -426,15 +411,13 @@ export default function ContactPage() {
                 .ct-submit-btn:hover { background:#d96c0d; transform:translateY(-2px); box-shadow:0 8px 24px rgba(245,124,21,0.35); }
                 .ct-form-note { font-size:11px; color:#bbb; text-align:center; margin:0; line-height:1.6; }
 
-                /* Success state */
                 .ct-success { display:flex; flex-direction:column; align-items:center; text-align:center; padding:40px 20px; gap:16px; }
                 .ct-success-icon { width:72px; height:72px; border-radius:50%; background:rgba(245,124,21,0.08); display:flex; align-items:center; justify-content:center; }
-                .ct-success-title { font-family:'Oswald',sans-serif; font-size:26px; font-weight:600; color:#111; text-transform:uppercase; margin:0; }
+                .ct-success-title { font-size:26px; font-weight:600; color:#111; text-transform:uppercase; margin:0; }
                 .ct-success-sub { font-size:13.5px; color:#666; line-height:1.7; margin:0; max-width:380px; }
                 .ct-success-btn { background:transparent; border:1.5px solid rgba(0,0,0,0.15); padding:10px 22px; border-radius:4px; font-family:'Raleway',sans-serif; font-size:12px; font-weight:700; color:#555; cursor:pointer; transition:border-color 0.2s,color 0.2s; margin-top:8px; }
                 .ct-success-btn:hover { border-color:#f57c15; color:#f57c15; }
 
-                /* ══ FAQ ══ */
                 .ct-faq { background:#fff; padding:80px 24px; border-top:1px solid rgba(0,0,0,0.05); }
                 .ct-faq-inner { max-width:1200px; margin:0 auto; }
                 .ct-faq-head { margin-bottom:44px; }
@@ -446,7 +429,6 @@ export default function ContactPage() {
                 .ct-faq-q { font-family:Raleway,sans-serif; font-size:15px; font-weight:600; color:#111; text-transform:uppercase; margin:0 0 10px 0; line-height:1.3; }
                 .ct-faq-a { font-size:1rem; color:#777; line-height:1.65; margin:0; }
 
-                /* ══ BOTTOM CTA ══ */
                 .ct-bottom { background:#060606; padding:50px 24px; }
                 .ct-bottom-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap; }
                 .ct-bottom-title { font-family:Raleway,sans-serif; font-size:22px; font-weight:600; color:#fff; text-transform:uppercase; margin:0 0 6px 0; letter-spacing:0.3px; }
@@ -454,7 +436,6 @@ export default function ContactPage() {
                 .ct-call-btn { display:inline-flex; align-items:center; gap:10px; background:#f57c15; color:#fff; border:none; padding:14px 32px; border-radius:4px; font-family:'Raleway',sans-serif; font-size:14px; font-weight:800; letter-spacing:1px; cursor:pointer; transition:background 0.25s,transform 0.2s; box-shadow:0 5px 18px rgba(245,124,21,0.3); white-space:nowrap; }
                 .ct-call-btn:hover { background:#d96c0d; transform:translateY(-2px); }
 
-                /* ══ RESPONSIVE ══ */
                 @media (max-width:1024px) {
                     .ct-main-inner { grid-template-columns:1fr; }
                     .ct-faq-grid { grid-template-columns:repeat(2,1fr); }
@@ -466,9 +447,9 @@ export default function ContactPage() {
                     .ct-bottom-inner { flex-direction:column; text-align:center; }
                     .ct-deco-line { display:none; }
                 }
-            `}</style>
-            </main>
+                `}</style>
+            </main >
             <FooterSection />
         </>
     );
-} 
+}

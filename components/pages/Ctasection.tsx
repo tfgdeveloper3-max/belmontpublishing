@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link"; // ← ADD: next/link import kiya
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
@@ -77,8 +78,8 @@ const CTASection: React.FC = () => {
                     </p>
 
                     <div className="cta-btns">
-                        <button className="btn-dark">Get Started</button>
-                        <button className="btn-orange">Live Chat</button>
+                        <Link href="/contact" className="btn-orange">Get Started</Link>
+                        <a href="tel:2797770381" className="btn-dark">(279) 777-0381</a>
                     </div>
                 </div>
             </div>
@@ -280,38 +281,6 @@ const CTASection: React.FC = () => {
                     max-width: 520px;
                 }
 
-                /* Stats row */
-                .cta-stats {
-                    display: flex;
-                    align-items: center;
-                    gap: 24px;
-                    margin-bottom: 32px;
-                    flex-wrap: wrap;
-                }
-                .stat-item {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 4px;
-                }
-                .stat-num {
-                    font-size: 22px;
-                    font-weight: 700;
-                    color: #f57c15;
-                    line-height: 1;
-                }
-                .stat-label {
-                    font-size: 11px;
-                    color: rgba(255, 255, 255, 0.38);
-                    letter-spacing: 0.5px;
-                    text-transform: uppercase;
-                }
-                .stat-divider {
-                    width: 1px;
-                    height: 36px;
-                    background: rgba(255, 255, 255, 0.10);
-                    flex-shrink: 0;
-                }
-
                 /* Buttons */
                 .cta-btns {
                     display: flex;
@@ -319,27 +288,11 @@ const CTASection: React.FC = () => {
                     gap: 14px;
                     flex-wrap: wrap;
                 }
-                .btn-dark {
-                    background: rgba(255, 255, 255, 0.08);
-                    color: #fff;
-                    border: 1px solid rgba(255, 255, 255, 0.16);
-                    padding: 14px 34px;
-                    border-radius: 6px;
-                    font-size: 14px;
-                    font-weight: 700;
-                    cursor: pointer;
-                    font-family: "Nunito Sans", sans-serif;
-                    transition: background 0.2s, box-shadow 0.2s;
-                    letter-spacing: 0.3px;
-                    backdrop-filter: blur(8px);
-                }
-                .btn-dark:hover {
-                    background: rgba(255, 255, 255, 0.14);
-                    box-shadow: 0 4px 18px rgba(255, 255, 255, 0.06);
-                }
-                .btn-orange {
+
+                /* ── Global CSS for Link & a tags ── */
+                :global(.btn-orange) {
                     background: #f57c15;
-                    color: #fff;
+                    color: #fff !important;
                     border: none;
                     padding: 14px 34px;
                     border-radius: 6px;
@@ -350,10 +303,32 @@ const CTASection: React.FC = () => {
                     transition: background 0.2s, box-shadow 0.2s;
                     letter-spacing: 0.3px;
                     box-shadow: 0 4px 22px rgba(245, 124, 21, 0.42);
+                    text-decoration: none !important;
+                    display: inline-block;
                 }
-                .btn-orange:hover {
+                :global(.btn-orange):hover {
                     background: #d96a0a;
                     box-shadow: 0 6px 30px rgba(245, 124, 21, 0.58);
+                }
+                :global(.btn-dark) {
+                    background: rgba(255, 255, 255, 0.08);
+                    color: #fff !important;
+                    border: 1px solid rgba(255, 255, 255, 0.16);
+                    padding: 14px 34px;
+                    border-radius: 6px;
+                    font-size: 14px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    font-family: "Nunito Sans", sans-serif;
+                    transition: background 0.2s, box-shadow 0.2s;
+                    letter-spacing: 0.3px;
+                    backdrop-filter: blur(8px);
+                    text-decoration: none !important;
+                    display: inline-block;
+                }
+                :global(.btn-dark):hover {
+                    background: rgba(255, 255, 255, 0.14);
+                    box-shadow: 0 4px 18px rgba(255, 255, 255, 0.06);
                 }
 
                 /* Responsive */
