@@ -8,55 +8,55 @@ interface ServiceCard {
 
 const services: ServiceCard[] = [
     {
-        icon: "/images/icons/Book-Formatting.png",
+        icon: "/images/icons/01.png",
         title: "Ideation & Brainstorming",
         description:
             "Every successful book begins with a strong concept. Our publishing consultants help refine your ideas, develop compelling storylines, strengthen themes, and create engaging character arcs that resonate with your target audience.",
     },
     {
-        icon: "/images/icons/Book-Cover-Design.png",
+        icon: "/images/icons/02.png",
         title: "Editing, Proofreading & Formatting",
         description:
             "A professionally polished manuscript is essential for publication success. Our editors enhance clarity, consistency, grammar, and flow while our formatting specialists ensure your book meets the technical requirements of major publishing platforms and devices.",
     },
     {
-        icon: "/images/icons/book-publishing.png",
+        icon: "/images/icons/03.png",
         title: "Book Cover Design",
         description:
             "Your cover is your book's first impression. Our creative design team develops eye-catching, genre-specific covers that capture attention, communicate your message, and encourage readers to explore what's inside.",
     },
     {
-        icon: "/images/icons/Book-Promotions.png",
+        icon: "/images/icons/04.png",
         title: "Publishing & Global Distribution",
         description:
             "We simplify the publishing process by handling platform setup, e-book conversion, print-ready formatting, metadata optimization, and distribution across major retailers including Amazon Kindle, Apple Books, Kobo, Barnes & Noble, and other international marketplaces.",
     },
     {
-        icon: "/images/icons/Book-vedio-tailor.png",
+        icon: "/images/icons/05.png",
         title: "Marketing & Promotional Campaigns",
         description:
             "Publishing your book is only the beginning. Our marketing specialists create customized promotional strategies including social media marketing, paid advertising, email campaigns, influencer outreach, and reader engagement initiatives designed to maximize visibility and sales.",
     },
     {
-        icon: "/images/icons/Book-Sales-Portal.png",
+        icon: "/images/icons/06.png",
         title: "Video Book Trailers & Author Websites",
         description:
             "Bring your story to life with professionally produced video trailers and custom-built author websites. These powerful branding tools help establish your online presence, engage readers, and create additional opportunities for book discovery and sales.",
     },
     {
-        icon: "/images/icons/icon-7.png",
+        icon: "/images/icons/07.png",
         title: "Sales Tracking & Royalty Management",
         description:
             "Stay informed about your book's performance with transparent reporting and royalty tracking. We help authors understand sales trends, monitor revenue streams, and make informed decisions to maximize long-term profitability.",
     },
     {
-        icon: "/images/icons/icon-8.png",
+        icon: "/images/icons/08.png",
         title: "Book Events & Industry Participation",
         description:
             "Expand your reach beyond online platforms through strategic participation in book fairs, literary festivals, author signings, virtual events, and industry conferences. We help position your book in front of readers, industry professionals, media representatives, and valuable networking opportunities that can elevate your author brand.",
     },
     {
-        icon: "/images/icons/icon-9.png",
+        icon: "/images/icons/09.png",
         title: "Author Branding & Long-Term Growth",
         description:
             "Building a successful author career requires more than publishing a single book. We help authors develop a professional brand, strengthen audience engagement, and create sustainable growth strategies that support future publishing success.",
