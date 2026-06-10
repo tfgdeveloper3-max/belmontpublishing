@@ -1,26 +1,74 @@
-@import "tailwindcss";
+/* ═══════════════════════════════════════════════════
+   GLOBAL FONT STYLES
+   Oswald  → h1-h6 (bold condensed, like Lounge Lizard)
+   Raleway → body, paragraphs, buttons, inputs
+═══════════════════════════════════════════════════ */
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Raleway, Arial, sans-serif;
+  margin: 0;
+  /* ✅ FIX: Browser ka default white margin hatane ke liye */
+  padding: 0;
+  /* ✅ FIX: Kisi bhi default padding ko rokne ke liye */
+  overflow-x: hidden;
+  /* ✅ FIX: Horizontal scroll aur white corners ko rokne ke liye */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Headings: Oswald bold condensed ── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: Oswald, Arial, sans-serif;
+  /* ✅ FIX: Yahan Raleway tha, Oswald kar diya jaise comment mein likha tha */
+  font-weight: 700;
+  word-break: keep-all;
+  overflow-wrap: normal;
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ── Heading size scale ── */
+h1 {
+  font-size: clamp(2rem, 4vw, 4.2rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+}
+
+h4 {
+  font-size: clamp(1rem, 1.5vw, 1.4rem);
+}
+
+/* ── Body text ── */
+p,
+li,
+span,
+a,
+input,
+textarea,
+button,
+label {
+  font-family: Raleway, Arial, sans-serif;
+}
+
+/* ── Buttons inherit Raleway ── */
+button {
+  font-family: Raleway, Arial, sans-serif;
 }
